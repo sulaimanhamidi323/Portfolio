@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Feedback - MS Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <style>
+        @keyframes bounce {
+            0% { transform: translateY(0);}
+            50% { transform: translateY(-12px);}
+            100% { transform: translateY(0);}
+        }
+        .comment-dots-animate { animation: bounce 1.1s infinite; }
+        .card:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: 0 6px 36px #49a09d44;
+            transition: 0.22s;
+        }
+        .funfact {
+            background: #ffd20020;
+            color: #5f2c82;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: .98rem;
+            margin-top: 10px;
+            margin-bottom: -8px;
+            text-align: right;
+            font-style: italic;
+            font-weight: 500;
+        }
+        .quote-bar {
+            background: linear-gradient(90deg, #ffd200cc 0%, #f7971ecc 100%);
+            border-radius: 20px;
+            padding: 13px 26px;
+            margin: 24px 0 18px;
+            text-align: center;
+            color: #5f2c82;
+            font-weight: 600;
+            font-size: 1.13rem;
+            letter-spacing: .4px;
+            box-shadow: 0 2px 18px #ffd20023;
+        }
+    </style>
+</head>
+<body 
+    style="font-family: 'Poppins', sans-serif; 
+           margin: 0; 
+           padding: 0; 
+           min-height: 100vh;
+           background: linear-gradient(135deg, #f7971e 0%, #ffd200 50%, #5f2c82 100%);
+           color: #222;">
+<div style="position:fixed;bottom:32px;right:32px;z-index:999;">
+        <button onclick="toggleAudio()" id="audioBtn" style="background:#ffd200;border:none;padding:12px 18px;border-radius:50px;font-weight:bold;box-shadow:0 2px 8px #5f2c8220;cursor:pointer;color:#5f2c82;">
+            Play Music 🎵
+        </button>
+    </div>
+    <audio id="bgAudio" src="music/bgm.mp3" loop></audio>
+    <script>
+        var audio = document.getElementById('bgAudio');
+        var btn = document.getElementById('audioBtn');
+        var playing = false;
+        var firstClick = false;
+
+        function toggleAudio() {
+            if (!playing) {
+                audio.play();
+                btn.innerHTML = 'Pause Music ⏸️';
+                playing = true;
+            } else {
+                audio.pause();
+                btn.innerHTML = 'Play Music 🎵';
+                playing = false;
+            }
+        }
+
+        // Play music on first click anywhere on the page
+        document.body.addEventListener('click', function playMusicOnClick(e) {
+            if (!firstClick) {
+                audio.play();
+                btn.innerHTML = 'Pause Music ⏸️';
+                playing = true;
+                firstClick = true;
+            }
+        });
+    </script>
+    <!-- Navigation Bar -->
+    <nav style="
+        width: 100%; 
+        background: linear-gradient(90deg, #5f2c82 0%, #49a09d 100%);
+        padding: 0;
+        box-shadow: 0 4px 16px #49a09d33;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    ">
+        <div style="max-width: 900px; width:100%; display:flex; align-items:center;">
+            <div style="padding: 0 24px; flex-shrink:0;">
+            </div>
+            <div style="display: flex; gap: 8px; margin-left: auto; padding-right:18px;">
+                <a href="index.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-house" style="margin-right:5px;"></i>Home</a>
+                
+                <a href="education.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-graduation-cap" style="margin-right:5px;"></i>Education</a>
+                <a href="experience.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-briefcase" style="margin-right:5px;"></i>Experience</a>
+                <a href="interest.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-star" style="margin-right:5px;"></i>Interest</a>
+                <a href="skill.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-laptop" style="margin-right:5px;"></i>Skills</a>
+                <a href="aboutme.html"
+                   style="padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 9px; font-weight: 600; font-size:1rem;">
+                   <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>About Me</a>
+                <a href="feedback.html"
+                   style="padding: 12px 20px; color: #5f2c82; background: #ffd200; text-decoration: none; border-radius: 9px; font-weight: 800; font-size:1rem; box-shadow: 0 1px 6px #ffd20033;">
+                   <i class="fa-solid fa-comment-dots comment-dots-animate" style="margin-right:5px;"></i>Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <header 
+        style="
+            background: linear-gradient(rgba(95,44,130,0.75), rgba(76,201,240,0.40)), url('image/banner.png') center/cover no-repeat;
+            padding: 24px 0 16px 0;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(76,201,240,0.13);
+            border-radius: 0 0 32px 32px;
+            position: relative;
+            min-height: 150px;
+            ">
+        <h1 style="margin: 0; font-size: 2.5rem; letter-spacing: 2px; font-weight: 700; color: #ffd200; text-shadow: 2px 2px 16px #5f2c82;">
+            MS Portfolio
+        </h1>
+        <p style="margin: 10px 0 0; font-size: 1.18rem; font-weight: 500; color: #fff; text-shadow:1px 2px 10px #333;">
+            Welcome to my vibrant personal page!
+        </p>
+    </header>
+
+    <main style="max-width: 500px; margin: 40px auto 0; background: rgba(255,255,255,0.96); border-radius: 28px; box-shadow: 0 8px 32px #5f2c8240; padding: 36px;">
+        <section>
+            <form action="mailto:sulaimanhamidi323@gmail.com" method="POST"  style="display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <label for="name" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-user"></i> Your Name</label>
+                    <input type="text" id="name" name="name" required 
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <label for="email" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" required 
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <label for="message" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-comment"></i> Feedback</label>
+                    <textarea id="message" name="message" rows="5" required 
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; resize: vertical;"></textarea>
+                </div>
+                <button type="submit"
+                    style="padding:14px; border:none; border-radius:12px; background: linear-gradient(90deg, #5f2c82 0%, #ffd200 100%); color:#fff; font-size:1.1rem; font-weight:700; cursor:pointer; box-shadow:0 2px 12px #5f2c8230; transition:background 0.2s;">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Feedback
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer style="background: linear-gradient(90deg, #5f2c82 0%, #49a09d 100%); padding: 32px 0 16px; color: #fff; margin-top: 40px; border-radius: 0 0 32px 32px; box-shadow: 0 -2px 24px #5f2c8230;">
+      <center>
+        <div style="margin-bottom: 18px;">
+          <a href="https://www.instagram.com/lumyn97/" target="_blank" style="margin: 0 10px;">
+            <img src="image/instagram.png" width="40px" title="Instagram" style="vertical-align:middle; border-radius:50%; box-shadow:0 2px 12px #3333;">
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sulaimanhamidi323@gmail.com" target="_blank" style="margin: 0 10px;">
+            <img src="image/gmail.png" width="40px" title="Gmail" style="vertical-align:middle; border-radius:50%; box-shadow:0 2px 12px #3333;">
+          </a>
+          <a href="https://www.linkedin.com/in/sulaiman-hamidi-119320271/" target="_blank" style="margin: 0 10px;">
+            <img src="image/linkedin.png" width="40px" title="LinkedIn" style="vertical-align:middle; border-radius:50%; box-shadow:0 2px 12px #3333;">
+          </a>
+        </div>
+        <p style="margin: 10px 0 2px; font-size: 1rem; color: #ffd200;">
+          <b>E-Portfolio ©2025 Copyright. All Rights Reserved, Powered By HTML<br>
+          Best browser viewed using Google Chrome</b>
+        </p>
+        <p style="margin: 0 0 6px; font-size: .98rem;">
+          <b>This website is for educational purposes (IMS458)</b>
+        </p>
+      </center>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top"
+        style="display:none;position:fixed;bottom:100px;right:32px;z-index:999;background:#5f2c82;color:#ffd200;
+        border:none;padding:15px 20px;border-radius:50%;box-shadow:0 2px 12px #3338;font-size:1.5rem;cursor:pointer;transition:background 0.2s;">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button Logic
+        var mybutton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+</body>
+</html>
