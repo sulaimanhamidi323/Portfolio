@@ -44,6 +44,12 @@
             letter-spacing: .4px;
             box-shadow: 0 2px 18px #ffd20023;
         }
+        @media (max-width: 950px) {
+            .main-flex {
+                flex-direction: column;
+                gap: 24px !important;
+            }
+        }
     </style>
 </head>
 <body 
@@ -149,30 +155,69 @@
         </p>
     </header>
 
-    <main style="max-width: 500px; margin: 40px auto 0; background: rgba(255,255,255,0.96); border-radius: 28px; box-shadow: 0 8px 32px #5f2c8240; padding: 36px;">
-        <section>
-            <form action="mailto:sulaimanhamidi323@gmail.com" method="POST"  style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <label for="name" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-user"></i> Your Name</label>
-                    <input type="text" id="name" name="name" required 
-                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
-                </div>
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <label for="email" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-envelope"></i> Email</label>
-                    <input type="email" id="email" name="email" required 
-                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
-                </div>
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <label for="message" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-comment"></i> Feedback</label>
-                    <textarea id="message" name="message" rows="5" required 
-                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; resize: vertical;"></textarea>
-                </div>
-                <button type="submit"
-                    style="padding:14px; border:none; border-radius:12px; background: linear-gradient(90deg, #5f2c82 0%, #ffd200 100%); color:#fff; font-size:1.1rem; font-weight:700; cursor:pointer; box-shadow:0 2px 12px #5f2c8230; transition:background 0.2s;">
-                    <i class="fa-solid fa-paper-plane"></i> Submit Feedback
-                </button>
-            </form>
+    <!-- Main Content -->
+    <main style="max-width: 1100px; margin: 40px auto 0; background: rgba(255,255,255,0.96); border-radius: 28px; box-shadow: 0 8px 32px #5f2c8240; padding: 36px;">
+      <div class="main-flex" style="display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between;">
+        <!-- Feedback Form -->
+        <section style="flex:1 1 380px; min-width: 330px; max-width: 520px;">
+          <h2 style="color:#5f2c82; margin-top:0; font-weight:700;"><i class="fa-solid fa-comment-dots"></i> Feedback</h2>
+          <form action="mailto:sulaimanhamidi323@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+              <label for="name" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-user"></i> Your Name</label>
+              <input type="text" id="name" name="name" required 
+                  style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+              <label for="email" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-envelope"></i> Email</label>
+              <input type="email" id="email" name="email" required 
+                  style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; margin-bottom:10px;">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+              <label for="message" style="font-weight:600; color:#5f2c82; margin-bottom:4px;"><i class="fa-solid fa-comment"></i> Feedback</label>
+              <textarea id="message" name="message" rows="5" required 
+                  style="width:100%; padding:12px; border-radius:10px; border:1px solid #49a09d; font-size:1rem; resize: vertical;"></textarea>
+            </div>
+            <button type="submit"
+                style="padding:14px; border:none; border-radius:12px; background: linear-gradient(90deg, #5f2c82 0%, #ffd200 100%); color:#fff; font-size:1.1rem; font-weight:700; cursor:pointer; box-shadow:0 2px 12px #5f2c8230; transition:background 0.2s;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Feedback
+            </button>
+          </form>
         </section>
+        <!-- Get in Touch Section -->
+        <section style="flex:1 1 330px; min-width: 300px; max-width: 420px;">
+          <h2 style="color:#5f2c82; font-weight:700; margin-top:0;"><i class="fa-solid fa-address-book"></i> My Contact</h2>
+          <table style="width:100%; font-size:1.06rem; margin-bottom:16px;">
+            <tr>
+              <td><strong>Whatsapp:</strong></td>
+              <td><a href="https://wa.me/+0167065794" style="color:#5f2c82;">016-7065794</a></td>
+            </tr>
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td><a href="https://mail.google.com/mail/?view=cm&fs=1&to=2024102589@student.uitm.edu.my" target="_blank" style="color:#5f2c82;">2024102589@student.uitm.edu.my</a></td>
+            </tr>
+            <tr>
+              <td><strong>LinkedIn:</strong></td>
+              <td><a href="https://linkedin.com/in/sulaiman-hamidi-119320271/" target="_blank" style="color:#5f2c82;">linkedin.com/in/sulaiman-hamidi/</a></td>
+            </tr>
+            <tr>
+              <td><strong>Location:</strong></td>
+              <td>Hospital Selayang, Selangor, Malaysia</td>
+            </tr>
+          </table>
+          <div style="margin-bottom:16px;">
+            <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15935.586210197635!2d101.62082348926643!3d3.2552961244083797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c2d04bb7943%3A0x9e3c282f6f32415e!2sHospital%20Selayang!5e0!3m2!1sen!2smy!4v1716444617436!5m2!1sen!2smy"
+  width="100%"
+  height="210"
+  style="border:0; border-radius:12px; box-shadow:0 2px 14px #ffd20044;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+          </div>
+        </section>
+      </div>
     </main>
     <footer style="background: linear-gradient(90deg, #5f2c82 0%, #49a09d 100%); padding: 32px 0 16px; color: #fff; margin-top: 40px; border-radius: 0 0 32px 32px; box-shadow: 0 -2px 24px #5f2c8230;">
       <center>
@@ -180,7 +225,7 @@
           <a href="https://www.instagram.com/lumyn97/" target="_blank" style="margin: 0 10px;">
             <img src="image/instagram.png" width="40px" title="Instagram" style="vertical-align:middle; border-radius:50%; box-shadow:0 2px 12px #3333;">
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sulaimanhamidi323@gmail.com" target="_blank" style="margin: 0 10px;">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=2024102589@student.uitm.edu.my" target="_blank" style="margin: 0 10px;">
             <img src="image/gmail.png" width="40px" title="Gmail" style="vertical-align:middle; border-radius:50%; box-shadow:0 2px 12px #3333;">
           </a>
           <a href="https://www.linkedin.com/in/sulaiman-hamidi-119320271/" target="_blank" style="margin: 0 10px;">
@@ -222,6 +267,5 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
-
 </body>
 </html>
